@@ -6,4 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(TodoListApp
     src/source.cpp
+    src/Task.cpp
 )
+
+include_directories("${PROJECT_SOURCE_DIR}/include")
