@@ -1,33 +1,33 @@
 #pragma once
-#define TASK_H
 
 #include <string>
 
 class Task {
-    private:
-        int id;
-        std::string name;
-        std::string description;
-        bool isCompleted;
+private:
+    int id;
+    std::string name;
+    std::string description;
+    bool isCompleted;
 
-    public:
-        // Constructor
-        Task(); // Default constructor
-        Task(int id, const std::string name, const std::string description, bool isCompleted = false);
+public:
+    // Default constructor
+    Task();
 
-        // Destructor
-        ~Task();
+    // Parameterized constructor
+    Task(int id, const std::string& name, const std::string& description, bool isCompleted = false);
 
-        // Getters
-        int getId() const;
-        const std::string getName() const;
-        const std::string getDescription() const;
-        bool getIsCompleted() const;
+    // Destructor
+    ~Task();
 
-        // Setters
-        void setId(int id);
-        void setName(std::string name);
-        void setDescription(std::string description);
-        void setIsCompleted(bool isCompleted);
+    // Getters
+    int getId() const;
+    std::string getName() const;
+    std::string getDescription() const;
+    bool getIsCompleted() const;
 
+    // Setters
+    void setId(int newId);
+    void setName(const std::string& newName);
+    void setDescription(const std::string& newDesc);
+    void setIsCompleted(bool completed);
 };

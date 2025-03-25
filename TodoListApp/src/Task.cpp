@@ -1,42 +1,33 @@
-#include "../include/Task.h"
+#pragma once
 
-Task::Task() : id(0), name(""), description(""), isCompleted(false) {}
+#include <string>
 
-Task::Task(int id, std::string name, std::string description, bool isCompleted) : id(id), name(name), description(description), isCompleted(isCompleted) {}
+class Task {
+private:
+    int id;
+    std::string name;
+    std::string description;
+    bool isCompleted;
 
-//Getters
-int Task::getId() const {
-    return id;
-}
+public:
+    // Default constructor
+    Task();
 
-const std::string Task::getName() const {
-    return name;
-}
+    // Parameterized constructor
+    Task(int id, const std::string& name, const std::string& description, bool isCompleted = false);
 
-const std::string Task::getDescription() const {
-    return description;
-}
+    // Destructor
+    ~Task();
 
-bool Task::getIsCompleted() const {
-    return isCompleted;
-}
+    // Getters
+    int getId() const;
+    std::string getName() const;
+    std::string getDescription() const;
+    bool getIsCompleted() const;
 
-//Setters
-
-void Task::setId(int id) {
-    this->id = id;
-}
-
-void Task::setName(std::string name) {
-    this->name = name;
-}
-
-void Task::setDescription(std::string description) {
-    this->description = description;
-}
-
-void Task::setIsCompleted(bool isCompleted) {
-    this->isCompleted = isCompleted;
-}
-
-Task::~Task() {}
+    // Setters
+    void setId(int newId);
+    void setName(const std::string& newName);
+    void setDescription(const std::string& newDesc);
+    void setIsCompleted(bool completed);
+};
